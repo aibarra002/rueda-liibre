@@ -4,21 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rueda Libre | Reservas</title>
-
-    <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Hoja de Estilos Externa -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-
-    <!-- Encabezado y Navegación Principal -->
     <header>
         <a href="../index.html">
-            <img src="../img/logo-rueda-libre.png" alt="Logo de Rueda Libre" id="logo">
+            <img src="/img/logo.jpeg" alt="Logo de Rueda Libre" id="logo">
         </a>
         <nav aria-label="Navegación principal">
             <ul id="menu"></ul>
@@ -29,19 +23,13 @@
             </ul>
         </nav>
     </header>
-
-    <!-- Contenido Principal -->
     <main>
         <h1>Reserva tu bicicleta</h1>
-        
-        <!-- Sección Formulario de Reserva -->
         <section>
             <h2>Formulario de Reserva</h2>
             
             <form action="https://formspree.io/f/example" method="post">
-                
-                <!-- Grupo 1: Datos Personales -->
-                <fieldset>
+                 <fieldset>
                     <legend>Tus datos</legend>
                     
                     <p>
@@ -64,8 +52,6 @@
                         <input type="tel" id="celular" name="telefono_celular" pattern="3[0-9]{9}" required placeholder="Ej: 3001234567" title="Debe ser un número de 10 dígitos que empiece por 3">
                     </p>
                 </fieldset>
-
-                <!-- Grupo 2: Detalles del Alquiler -->
                 <fieldset>
                     <legend>Tu alquiler</legend>
 
@@ -107,7 +93,6 @@
                             <option value="ninguno">Ninguno (Alquiler libre)</option>
                             <option value="centro_historico">Centro Histórico</option>
                             <option value="reto_las_palmas">Reto Las Palmas</option>
-                            <option value="vuelta_al_valle">Vuelta al Valle</option>
                         </select>
                     </p>
 
@@ -116,8 +101,6 @@
                         <textarea id="comentarios" name="comentarios_adicionales" rows="4" cols="40" maxlength="300" placeholder="Máximo 300 caracteres..."></textarea>
                     </p>
                 </fieldset>
-
-                <!-- Grupo 3: Confirmación y Políticas -->
                 <fieldset>
                     <legend>Confirmación</legend>
 
@@ -133,8 +116,6 @@
 
             </form>
         </section>
-
-        <!-- Contenido Complementario: Horarios -->
         <aside>
             <h2>Horario de Atención</h2>
             <dl>
@@ -146,10 +127,8 @@
             </dl>
         </aside>
     </main>
-
-    <!-- Pie de Página -->
     <footer>
-        <p>Rueda Libre - <a href="mailto:contacto@ruedalibre.com">contacto@ruedalibre.com</a> - 2026</p>
+        <p>Rueda Libre - <a href="mailto:contacto@ruedalibre.com">contacto@ruedalibre.com</a></p>
     </footer>
 
 </body>

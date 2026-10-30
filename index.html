@@ -1,54 +1,109 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rueda Libre | Inicio</title>
+    <title>Rueda Libre - Alquiler de Bicicletas en Medellín</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header>
-        <a href="index.html">
-            <img src="img/logo.jpeg" alt="Logo de Rueda Libre" id="logo">
-        </a>
-        <nav aria-label="Navegación principal">
-            <ul id="menu"></ul>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
+        <img src="img/logo.jpeg" id="logo" alt="Logo Rueda Libre">
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html" class="activo">Inicio</a></li>
+                <li><a href="paginas/tarifas.html">Tarifas</a></li>
                 <li><a href="paginas/reservas.html">Reservas</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h1>Bienvenidos a Rueda Libre</h1>
-        <section>
-            <h2>Sobre Nosotros</h2>
-            <p>Tu mejor opción para alquilar bicicletas y realizar recorridos guiados por la ciudad. Nos enfocamos en ofrecer movilidad sostenible y experiencias únicas.</p>
+        <!-- Portada -->
+        <section class="portada-grid">
+            <div>
+                <h1>Descubre Medellín sobre dos ruedas</h1>
+                <p>Alquila la bicicleta ideal para recorrer la ciudad, explorar sus montañas o disfrutar en familia.</p>
+            </div>
+            <div>
+                <img src="img/portada-home.jpg" alt="Bicicleta de alquiler en Medellín">
+            </div>
         </section>
+
+        <!-- Nuestra Flota -->
         <section>
-            <h2>Nuestros Servicios</h2>
+            <h2>Nuestras bicicletas</h2>
+            <div class="flota-grid">
+                <article class="tarjeta-servicio">
+                    <img src="img/urbana-clasica.jpg" alt="Bicicleta Urbana Clásica">
+                    <h3>Urbana Clásica</h3>
+                    <p>Cómoda y liviana para las ciclorrutas.</p>
+                    <p class="precio">Precio: $10.000 / hora</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
+                </article>
 
-            <article>
-                <h3>Alquiler de Bicicletas</h3>
-                <p>Ofrecemos bicicletas urbanas y de montaña por horas o días completos, equipadas con cascos y candados de seguridad.</p>
-            </article>
+                <article class="tarjeta-servicio">
+                    <img src="img/montana-trail.jpg" alt="Bicicleta Montaña Trail">
+                    <h3>Montaña Trail</h3>
+                    <p>Suspensión delantera y 21 cambios para las subidas.</p>
+                    <p class="precio">Precio: $15.000 / hora</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
+                </article>
 
-            <article>
-                <h3>Rutas Guiadas</h3>
-                <p>Acompaña a nuestros guías locales por los puntos más emblemáticos y turísticos de la ciudad con total seguridad.</p>
-            </article>
+                <article class="tarjeta-servicio">
+                    <span class="insignia-nuevo">Nuevo</span>
+                    <img src="img/electrica-urbana.jpg" alt="Bicicleta Eléctrica Urbana">
+                    <h3>Eléctrica Urbana</h3>
+                    <p>Asistencia eléctrica con 45 km de autonomía.</p>
+                    <p class="precio">Precio: $20.000 / hora</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
+                </article>
+            </div>
+        </section>
 
-            <p>
-                <a href="paginas/reservas.html" aria-label="Reservar bicicleta ahora">Reservar tu bicicleta</a>
-            </p>
+        <!-- Nuestras Rutas Destacadas -->
+        <section>
+            <h2>Nuestras rutas destacadas</h2>
+            <div class="rutas-grid">
+                <article class="tarjeta-servicio">
+                    <img src="img/recorrido-centro.jpeg" alt="Centro Histórico">
+                    <h3>Centro Histórico</h3>
+                    <p>Recorrido cultural por los puntos más icónicos de la ciudad.</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Ver detalles</a>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <img src="img/reto-palmas.jpeg" alt="Reto Las Palmas">
+                    <h3>Reto Las Palmas</h3>
+                    <p>Para los amantes de la montaña y la exigencia física.</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Ver detalles</a>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <img src="img/reto-valle.jpeg" alt="Vuelta al Valle">
+                    <h3>Vuelta al Valle</h3>
+                    <p>Paseo ecológico plano ideal para disfrutar en familia.</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Ver detalles</a>
+                </article>
+            </div>
         </section>
     </main>
+
+    <a href="https://wa.me/573197158607" class="btn-whatsapp-flotante" target="_blank">Chat WhatsApp</a>
+
     <footer>
-        <p>Rueda Libre - <a href="mailto:contacto@ruedalibre.com">contacto@ruedalibre.com</a> - 2026</p>
+        <div class="footer-bloque">
+            <p><strong>Rueda Libre Medellín</strong></p>
+            <p>Calle 10 # 43A - 25, El Poblado</p>
+        </div>
+        <div class="footer-bloque">
+            <p>2026 Rueda Libre. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
 </body>
 </html>

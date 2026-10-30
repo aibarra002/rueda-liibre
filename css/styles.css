@@ -1,8 +1,7 @@
- /* ==================================================
-   VARIABLES GLOBALES Y CONFIGURACIÓN DE MARCA
+/* ==================================================
+   1. VARIABLES GLOBALES
    ================================================== */
 :root {
-    /* Paleta de colores de marca */
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
     --color-azul-noche: #14213D;
@@ -10,20 +9,18 @@
     --color-gris-asfalto: #5B6470;
     --color-blanco: #FFFFFF;
 
-    /* Familias tipográficas */
     --fuente-titulos: 'Montserrat', sans-serif;
     --fuente-cuerpo: 'Open Sans', sans-serif;
 
-    /* Escala de espaciado en rem */
-    --espacio-xs: 0.25rem;  /* 4px */
-    --espacio-sm: 0.5rem;   /* 8px */
-    --espacio-md: 1rem;     /* 16px */
-    --espacio-lg: 2rem;     /* 32px */
-    --espacio-xl: 3rem;     /* 48px */
+    --espacio-xs: 0.25rem;
+    --espacio-sm: 0.5rem;
+    --espacio-md: 1rem;
+    --espacio-lg: 2rem;
+    --espacio-xl: 3rem;
 }
 
 /* ==================================================
-   RESET Y BOX MODEL GLOBAL (Paso 1)
+   2. RESET, BOX MODEL E IMÁGENES FLUIDAS
    ================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -31,47 +28,30 @@
     padding: 0;
 }
 
-/* ==================================================
-   ESTILOS GENERALES Y HERENCIA
-   ================================================== */
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 body {
     font-family: var(--fuente-cuerpo);
     font-weight: 400;
     color: var(--color-azul-noche);
     background-color: var(--color-crema);
     line-height: 1.6;
+    padding-bottom: 5rem;
 }
 
-/* Contenedor Principal Centrado con max-width en rem (Paso 2) */
-main {
-    max-width: 68rem; /* 1088px aprox para lectura óptima */
+main, header, footer {
+    width: 100%;
+    max-width: 75rem;
     margin-left: auto;
     margin-right: auto;
     padding: var(--espacio-md);
 }
 
-/* Header & Footer al ancho del contenedor */
-header, footer {
-    max-width: 68rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: var(--espacio-md);
-}
-
-/* Portada de Inicio con altura mínima relativa a la ventana (Paso 2) */
-.portada {
-    min-height: 50vh;
-    padding: var(--espacio-lg) 0;
-    display: block;
-}
-
-/* Logo */
-#logo {
-    max-width: 150px;
-    height: auto;
-}
-
-/* Encabezados */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
     font-weight: 700;
@@ -83,26 +63,38 @@ p {
     margin-bottom: var(--espacio-md);
 }
 
-/* ==================================================
-   MENÚ DE NAVEGACIÓN EN FILA (Paso 6)
-   ================================================== */
-#menu {
-    list-style: none;
-    padding: 0;
-    margin-top: var(--espacio-sm);
+#logo {
+    max-width: 130px;
+    margin: 0 auto;
 }
 
-#menu li {
-    display: inline-block;
-    margin-right: var(--espacio-sm);
+/* ==================================================
+   3. CABECERA Y NAVEGACIÓN
+   ================================================== */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-sm);
+    text-align: center;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacio-xs);
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #menu a {
     color: var(--color-gris-asfalto);
     text-decoration: none;
-    padding: var(--espacio-sm) var(--espacio-md);
-    display: inline-block;
-    transition: color 0.2s ease, border-bottom 0.2s ease;
+    padding: var(--espacio-sm);
+    font-size: 0.95rem;
+    display: block;
 }
 
 #menu a.activo {
@@ -111,119 +103,144 @@ p {
     border-bottom: 2px solid var(--color-verde-ruta);
 }
 
-#menu a:hover {
-    color: var(--color-azul-noche);
-}
-
-#menu a:focus {
-    outline: 2px solid var(--color-verde-ruta);
-    outline-offset: 3px;
+.portada-grid {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--espacio-md);
+    margin-bottom: var(--espacio-lg);
 }
 
 /* ==================================================
-   TARJETAS DE SERVICIOS (Paso 3)
+   4. ESTRUCTURA DE TARJETAS EN 3 COLUMNAS PAREJAS
    ================================================== */
+.flota-grid, .rutas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas exactamente iguales */
+    gap: var(--espacio-md);
+    width: 100%;
+    margin-bottom: var(--espacio-xl);
+}
+
 .tarjeta-servicio {
+    position: relative;
     background-color: var(--color-blanco);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 8px;
     padding: var(--espacio-md);
-    margin-bottom: var(--espacio-lg);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0; /* Previene que la falta de imagen o texto largo colapse la tarjeta */
 }
 
 .tarjeta-servicio img {
     width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: var(--espacio-md);
-}
-
-/* ==================================================
-   ESTILOS DE TABLAS (Paso 4)
-   ================================================== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: var(--espacio-lg);
-    background-color: var(--color-blanco);
-}
-
-th, td {
-    padding: var(--espacio-md);
-    text-align: left;
-    border: 1px solid var(--color-gris-asfalto);
-}
-
-th {
-    background-color: var(--color-azul-noche);
-    color: var(--color-blanco);
-    font-family: var(--fuente-titulos);
-}
-
-/* ==================================================
-   ESTILOS DE FORMULARIO (Paso 5)
-   ================================================== */
-form {
-    margin-bottom: var(--espacio-lg);
-}
-
-fieldset {
-    border: 1px solid var(--color-gris-asfalto);
+    height: 180px;
+    object-fit: cover;
     border-radius: 6px;
-    padding: var(--espacio-md);
-    margin-bottom: var(--espacio-lg);
-    background-color: var(--color-blanco);
-}
-
-legend {
-    font-family: var(--fuente-titulos);
-    font-weight: 700;
-    padding: 0 var(--espacio-sm);
-    color: var(--color-azul-noche);
-}
-
-/* Campo sobre etiqueta y 100% de ancho */
-.campo-grupo {
     margin-bottom: var(--espacio-md);
+    background-color: #E2E8F0; /* Color gris de fondo mientras carga la imagen */
 }
 
-.campo-grupo label {
-    display: block;
-    margin-bottom: var(--espacio-xs);
+.tarjeta-servicio .precio {
+    color: var(--color-verde-ruta);
     font-weight: 600;
 }
 
-.campo-grupo input[type="text"],
-.campo-grupo input[type="email"],
-.campo-grupo input[type="tel"],
-.campo-grupo input[type="date"],
-.campo-grupo input[type="number"],
-.campo-grupo select,
-.campo-grupo textarea {
-    width: 100%;
-    padding: var(--espacio-sm) var(--espacio-md);
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 4px;
-    font-family: var(--fuente-cuerpo);
-    font-size: 1rem;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: 2px solid var(--color-verde-ruta);
-    border-color: var(--color-verde-ruta);
-    box-shadow: 0 0 5px rgba(30, 122, 79, 0.4);
+.tarjeta-servicio .btn-accion {
+    margin-top: auto;
+    text-align: center;
 }
 
 /* ==================================================
-   BOTONES Y LLAMADA A LA ACCIÓN
+   5. BOTONES E INSIGNIAS
    ================================================== */
 .btn-accion {
-    display: inline-block;
+    display: block;
+    width: 100%;
     background-color: var(--color-verde-ruta);
     color: var(--color-blanco);
-    padding: var(--espacio-md) var(--espacio-lg); /* Relleno generoso */
+    padding: var(--espacio-sm) var(--espacio-md);
     text-decoration: none;
     font-weight: 600;
     border-radius: 4px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.insignia-nuevo {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+.btn-whatsapp-flotante {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: var(--color-verde-ruta);
+    color: var(--color-blanco);
+    padding: 0.6rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+/* ==================================================
+   6. PIE DE PÁGINA
+   ================================================== */
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+    border-top: 1px solid var(--color-gris-asfalto);
+    color: var(--color-gris-asfalto);
+    margin-top: var(--espacio-lg);
+    padding-top: var(--espacio-md);
+}
+
+/* ==================================================
+   7. ADAPTACIÓN PANTALLAS GRANDES (min-width: 768px)
+   ================================================== */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    #logo {
+        margin: 0;
+    }
+
+    #menu {
+        gap: var(--espacio-md);
+    }
+
+    .portada-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-bloque {
+        flex: 1;
+    }
 }
