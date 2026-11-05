@@ -11,82 +11,127 @@
 </head>
 <body>
 
-    <header>
-        <img src="img/logo.jpeg" id="logo" alt="Logo Rueda Libre">
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="paginas/tarifas.html">Tarifas</a></li>
-                <li><a href="paginas/reservas.html">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="container py-3">
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-fluid px-0">
+            <!-- Logo -->
+            <a class="navbar-brand m-0" href="../index.html"> <!-- (Usa index.html sin puntos en el inicio) -->
+                <img src="img/logo.jpeg" id="logo" alt="Logo Rueda Libre">
+            </a>
+
+            <!-- Botón Hamburguesa para Móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú colapsable -->
+            <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+                <ul id="menu" class="navbar-nav align-items-center gap-3 mb-2 mb-md-0">
+                    <li class="nav-item"><a href="index.html" class="nav-link activo text-decoration-none">Inicio</a></li>
+                    <li class="nav-item"><a href="paginas/tarifas.html" class="nav-link text-decoration-none">Tarifas</a></li>
+                    <li class="nav-item"><a href="paginas/reservas.html" class="nav-link text-decoration-none">Reservas</a></li>
+</ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <main>
-        <!-- Portada -->
         <section class="portada-grid">
             <div>
                 <h1>Descubre Medellín sobre dos ruedas</h1>
                 <p>Alquila la bicicleta ideal para recorrer la ciudad, explorar sus montañas o disfrutar en familia.</p>
+                <a href="paginas/reservas.html" class="btn-accion">Reserva tu bici</a>
             </div>
             <div>
-                <img src="img/portada-home.jpg" alt="Bicicleta de alquiler en Medellín">
+                <img src="img/portada.jpeg" alt="Bicicleta de alquiler en Medellín">
             </div>
         </section>
-
-        <!-- Nuestra Flota -->
         <section>
-            <h2>Nuestras bicicletas</h2>
+            <h2>Nuestra flota</h2>
             <div class="flota-grid">
                 <article class="tarjeta-servicio">
-                    <img src="img/urbana-clasica.jpg" alt="Bicicleta Urbana Clásica">
+                    <img src="img/bici-normal.jpeg" alt="Bicicleta Urbana Clásica">
                     <h3>Urbana Clásica</h3>
                     <p>Cómoda y liviana para las ciclorrutas.</p>
-                    <p class="precio">Precio: $10.000 / hora</p>
+                    <p class="precio">$10.000 / hora</p>
                     <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
                 </article>
 
                 <article class="tarjeta-servicio">
-                    <img src="img/montana-trail.jpg" alt="Bicicleta Montaña Trail">
+                    <img src="img/urbana-plegable.jpeg" alt="Bicicleta Urbana Plegable">
+                    <h3>Urbana Plegable</h3>
+                    <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+                    <p class="precio">$12.000 / hora</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <img src="img/bici-montaña.jpeg" alt="Bici montaña">
                     <h3>Montaña Trail</h3>
                     <p>Suspensión delantera y 21 cambios para las subidas.</p>
-                    <p class="precio">Precio: $15.000 / hora</p>
+                    <p class="precio">$15.000 / hora</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <img src="img/bici-gravel.jpeg" alt="Bicicleta Gravel Aventura">
+                    <h3>Gravel Aventura</h3>
+                    <p>Para rutas mixtas de asfalto y destapado.</p>
+                    <p class="precio">$18.000 / hora</p>
                     <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
                 </article>
 
                 <article class="tarjeta-servicio">
                     <span class="insignia-nuevo">Nuevo</span>
-                    <img src="img/electrica-urbana.jpg" alt="Bicicleta Eléctrica Urbana">
+                    <img src="img/bici-electrica.jpeg" alt="Bicicleta Eléctrica Urbana">
                     <h3>Eléctrica Urbana</h3>
                     <p>Asistencia eléctrica con 45 km de autonomía.</p>
-                    <p class="precio">Precio: $20.000 / hora</p>
+                    <p class="precio">$25.000 / hora</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <img src="img/bici-bebes.jpeg" alt="Bicicleta Infantil">
+                    <h3>Infantil</h3>
+                    <p>Para niños de 6 a 10 años.</p>
+                    <p class="precio">$8.000 / hora</p>
+                    <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <img src="img/tandem.jpeg" alt="Bicicleta Tándem">
+                    <h3>Tándem</h3>
+                    <p>Para dos personas; perfecta para pasear en pareja.</p>
+                    <p class="precio">$20.000 / hora</p>
                     <a href="paginas/reservas.html" class="btn-accion">Reservar</a>
                 </article>
             </div>
         </section>
-
-        <!-- Nuestras Rutas Destacadas -->
         <section>
             <h2>Nuestras rutas destacadas</h2>
             <div class="rutas-grid">
                 <article class="tarjeta-servicio">
-                    <img src="img/recorrido-centro.jpeg" alt="Centro Histórico">
+                    <img src="img/recorrido-centro.jpeg" alt="Ruta Centro Histórico">
                     <h3>Centro Histórico</h3>
                     <p>Recorrido cultural por los puntos más icónicos de la ciudad.</p>
+                    <p><strong>Nivel:</strong> Bajo</p>
                     <a href="paginas/reservas.html" class="btn-accion">Ver detalles</a>
                 </article>
 
                 <article class="tarjeta-servicio">
-                    <img src="img/reto-palmas.jpeg" alt="Reto Las Palmas">
+                    <img src="img/reto-palmas.jpeg" alt="Ruta Reto Las Palmas">
                     <h3>Reto Las Palmas</h3>
                     <p>Para los amantes de la montaña y la exigencia física.</p>
+                    <p><strong>Nivel:</strong> Alto</p>
                     <a href="paginas/reservas.html" class="btn-accion">Ver detalles</a>
                 </article>
 
                 <article class="tarjeta-servicio">
-                    <img src="img/reto-valle.jpeg" alt="Vuelta al Valle">
+                    <img src="img/reto-valle.jpeg" alt="Ruta Vuelta al Valle">
                     <h3>Vuelta al Valle</h3>
                     <p>Paseo ecológico plano ideal para disfrutar en familia.</p>
+                    <p><strong>Nivel:</strong> Intermedio</p>
                     <a href="paginas/reservas.html" class="btn-accion">Ver detalles</a>
                 </article>
             </div>
@@ -98,10 +143,17 @@
     <footer>
         <div class="footer-bloque">
             <p><strong>Rueda Libre Medellín</strong></p>
-            <p>Calle 10 # 43A - 25, El Poblado</p>
+            <p>Descubre la ciudad sobre dos ruedas.</p>
         </div>
         <div class="footer-bloque">
-            <p>2026 Rueda Libre. Todos los derechos reservados.</p>
+            <p><strong>Contacto</strong></p>
+            <p>Calle 10 # 43A - 25, El Poblado</p>
+            <p>info@ruedalibre.com</p>
+        </div>
+        <div class="footer-bloque">
+            <p><strong>Horarios</strong></p>
+            <p>Lunes a Domingo</p>
+            <p>6:00 AM - 8:00 PM</p>
         </div>
     </footer>
 

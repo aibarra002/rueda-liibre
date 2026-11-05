@@ -1,134 +1,118 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rueda Libre | Reservas</title>
+    <title>Reservas - Rueda Libre</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <header>
-        <a href="../index.html">
-            <img src="/img/logo.jpeg" alt="Logo de Rueda Libre" id="logo">
-        </a>
-        <nav aria-label="Navegación principal">
-            <ul id="menu"></ul>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html">Tarifas y rutas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="container py-3">
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-fluid px-0">
+            <a class="navbar-brand m-0" href="../index.html">
+                <img src="../img/logo.jpeg" id="logo" alt="Logo Rueda Libre">
+            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+                <ul id="menu" class="navbar-nav align-items-center gap-3 mb-2 mb-md-0">
+                    <li class="nav-item"><a href="../index.html" class="nav-link text-decoration-none">Inicio</a></li>
+                    <li class="nav-item"><a href="tarifas.html" class="nav-link text-decoration-none">Tarifas</a></li>
+                    <li class="nav-item"><a href="reservas.html" class="nav-link activo text-decoration-none">Reservas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
     <main>
-        <h1>Reserva tu bicicleta</h1>
-        <section>
-            <h2>Formulario de Reserva</h2>
+        <h1>Reserva tu Bicicleta</h1>
+
+        <div class="reservas-layout">
             
-            <form action="https://formspree.io/f/example" method="post">
-                 <fieldset>
-                    <legend>Tus datos</legend>
-                    
-                    <p>
-                        <label for="nombre">Nombre completo:</label><br>
-                        <input type="text" id="nombre" name="nombre_completo" minlength="3" required placeholder="Ej: Juan Pérez">
-                    </p>
+            <section class="reservas-formulario">
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Datos Personales</legend>
 
-                    <p>
-                        <label for="documento">Número de documento:</label><br>
-                        <input type="text" id="documento" name="numero_documento" pattern="[0-9]{6,10}" required placeholder="Entre 6 y 10 dígitos" title="Ingresa solo números, entre 6 y 10 dígitos">
-                    </p>
+                        <div class="campo-grupo">
+                            <label for="nombre">Nombre Completo:</label>
+                            <input type="text" id="nombre" name="nombre"class="form-control" pattern="[A-Za-zÀ-ÿ\s]+" 
+                            maxlength="60" title="Solo se permiten letras y espacios" placeholder="Ej: Carolina Ibarra"required>
+                        </div>
 
-                    <p>
-                        <label for="correo">Correo electrónico:</label><br>
-                        <input type="email" id="correo" name="correo_electronico" required placeholder="ejemplo@correo.com">
-                    </p>
+                        <div class="campo-fila">
+                            <div class="campo-grupo">
+                                <label for="documento">Documento de Identidad:</label>
+                                <input type="text" id="documento" name="documento" pattern="[0-9]{10}" maxlength="10" placeholder="Ej: 37332188" class="form-control"required>
+                            </div>
+                            <div class="campo-grupo">
+                                <label for="celular">Celular / WhatsApp:</label>
+                                <input type="tel" id="celular" name="celular" pattern="[0-9]{10}" maxlength="10" placeholder="Ej: 3001234567" class="form-control"required>
+                            </div>
+                        </div>
 
-                    <p>
-                        <label for="celular">Celular / WhatsApp:</label><br>
-                        <input type="tel" id="celular" name="telefono_celular" pattern="3[0-9]{9}" required placeholder="Ej: 3001234567" title="Debe ser un número de 10 dígitos que empiece por 3">
-                    </p>
-                </fieldset>
-                <fieldset>
-                    <legend>Tu alquiler</legend>
+                        <div class="campo-grupo">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" placeholder="Ej: carolina.ibarra@example.com" class="form-control"required>
+                        </div>
+                    </fieldset>
 
-                    <p>
-                        <label for="fecha">Fecha del alquiler:</label><br>
-                        <input type="date" id="fecha" name="fecha_alquiler" min="2026-11-01" max="2026-12-31" required>
-                    </p>
+                    <fieldset>
+                        <legend>Detalles de la Reserva</legend>
+                        <div class="campo-fila">
+                            <div class="campo-grupo">
+                                <label for="tipo-bici">Modelo de Bicicleta:</label>
+                                <select id="tipo-bici" name="tipo-bici">
+                                    <option value="urbana">Urbana Clásica (10.000 por hora)</option>
+                                    <option value="plegable">Urbana Plegable (12.000 por hora)</option>
+                                    <option value="montana">Montaña Trail (15.000 por hora)</option>
+                                    <option value="gravel">Gravel Aventura (18.000 por hora)</option>
+                                    <option value="electrica">Eléctrica Urbana (25.000 por hora)</option>
+                                    <option value="infantil">Infantil (8.000 por hora)</option>
+                                    <option value="tandem">Tándem (20.000 por hora)</option>
+                                </select>
+                            </div>
 
-                    <p>
-                        <strong>Tipo de bicicleta:</strong><br>
-                        <input type="radio" id="bici-urbana" name="tipo_bicicleta" value="urbana" required>
-                        <label for="bici-urbana">Urbana</label><br>
+                            <div class="campo-grupo">
+                                <label for="fecha">Fecha de Reserva:</label>
+                                <input type="date" id="fecha" name="fecha" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-accion">Reservar</button>
+                </form>
+            </section>
 
-                        <input type="radio" id="bici-montana" name="tipo_bicicleta" value="montana">
-                        <label for="bici-montana">Montaña</label><br>
+            <aside class="reservas-contacto">
+                <div class="tarjeta-contacto">
+                    <h3>Punto de Atención</h3>
+                    <p><strong>Dirección:</strong> Calle 10 # 43A - 25, El Poblado, Medellín.</p>
+                    <p><strong>Teléfono:</strong> +57 (604) 4274991</p>
+                    <p><strong>WhatsApp:</strong> +57 3197158607</p>
+                    <p><strong>Atención:</strong> Lunes a Domingo de 6:00 AM a 8:00 PM</p>
+                </div>
+            </aside>
 
-                        <input type="radio" id="bici-electrica" name="tipo_bicicleta" value="electrica">
-                        <label for="bici-electrica">Eléctrica</label>
-                    </p>
-
-                    <p>
-                        <label for="plan">Plan de alquiler:</label><br>
-                        <select id="plan" name="plan_alquiler" required>
-                            <option value="" disabled selected>Selecciona un plan</option>
-                            <option value="1_hora">1 hora</option>
-                            <option value="medio_dia">Medio día (4 horas)</option>
-                            <option value="dia_completo">Día completo (8 horas)</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="cantidad">Cantidad de bicicletas:</label><br>
-                        <input type="number" id="cantidad" name="cantidad_bicicletas" min="1" max="6" value="1" required>
-                    </p>
-
-                    <p>
-                        <label for="recorrido">Recorrido guiado:</label><br>
-                        <select id="recorrido" name="recorrido_guiado">
-                            <option value="ninguno">Ninguno (Alquiler libre)</option>
-                            <option value="centro_historico">Centro Histórico</option>
-                            <option value="reto_las_palmas">Reto Las Palmas</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="comentarios">Comentarios u observaciones:</label><br>
-                        <textarea id="comentarios" name="comentarios_adicionales" rows="4" cols="40" maxlength="300" placeholder="Máximo 300 caracteres..."></textarea>
-                    </p>
-                </fieldset>
-                <fieldset>
-                    <legend>Confirmación</legend>
-
-                    <p>
-                        <input type="checkbox" id="politicas" name="aceptar_politicas" value="aceptado" required>
-                        <label for="politicas">Acepto las políticas de alquiler y términos del servicio</label>
-                    </p>
-
-                    <p>
-                        <button type="submit">Confirmar Reserva</button>
-                    </p>
-                </fieldset>
-
-            </form>
-        </section>
-        <aside>
-            <h2>Horario de Atención</h2>
-            <dl>
-                <dt>Lunes a Viernes</dt>
-                <dd>7:00 a. m. a 7:00 p. m.</dd>
-                
-                <dt>Sábados, Domingos y Festivos</dt>
-                <dd>6:00 a. m. a 2:00 p. m.</dd>
-            </dl>
-        </aside>
+        </div>
     </main>
-    <footer>
-        <p>Rueda Libre - <a href="mailto:contacto@ruedalibre.com">contacto@ruedalibre.com</a></p>
+
+  <footer>
+        <div class="footer-bloque">
+            <p><strong>Rueda Libre Medellín</strong></p>
+            <p>Descubre la ciudad sobre dos ruedas.</p>
+        </div>
+        <div class="footer-bloque">
+            <p><strong>Contacto</strong></p>
+            <p>Calle 10 # 43A - 25, El Poblado</p>
+            <p>info@ruedalibre.com</p>
+        </div>
+        <div class="footer-bloque">
+            <p><strong>Horarios</strong></p>
+            <p>Lunes a Domingo</p>
+            <p>6:00 AM - 8:00 PM</p>
+        </div>
     </footer>
 
 </body>
