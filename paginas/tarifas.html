@@ -5,24 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarifas y Alquiler - Rueda Libre</title>
     
-    <!-- Bootstrap 5.3 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <!-- Hoja de estilos propia (Identidad Visual) -->
     <link rel="stylesheet" href="../css/styles.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light text-dark">
 
-    <!-- Encabezado con barra de navegación responsive y logo ajustado -->
     <header class="container py-3">
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid px-0">
                 <a class="navbar-brand m-0" href="../index.html">
-                    <img src="../img/logo.jpeg" id="logo" class="img-fluid" alt="Logo Rueda Libre" style="max-width: 130px;">
+                    <img src="../img/logo.jpeg" id="logo" alt="Logo Rueda Libre" style="max-width: 130px;" class="img-fluid">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,9 +27,9 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
                     <ul id="menu" class="navbar-nav align-items-center gap-3 mb-2 mb-md-0">
-                        <li class="nav-item"><a href="../index.html" class="nav-link text-decoration-none">Inicio</a></li>
-                        <li class="nav-item"><a href="tarifas.html" class="nav-link activo text-decoration-none">Tarifas</a></li>
-                        <li class="nav-item"><a href="reservas.html" class="nav-link text-decoration-none">Reservas</a></li>
+                        <li class="nav-item"><a href="../index.html" class="nav-link fw-semibold text-decoration-none">Inicio</a></li>
+                        <li class="nav-item"><a href="tarifas.html" class="nav-link activo fw-semibold text-decoration-none">Tarifas</a></li>
+                        <li class="nav-item"><a href="reservas.html" class="nav-link fw-semibold text-decoration-none">Reservas</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,19 +39,17 @@
     <main class="container my-4">
         <h1 class="fw-bold mb-4">Planes y Tarifas de Alquiler</h1>
 
-        <!-- Distribución en 2 columnas desde lg -->
         <div class="row g-4 align-items-start">
             
-            <!-- Columna Principal: Tablas de Tarifas con contenedor responsivo -->
             <section class="col-12 col-lg-8">
-                <h2 class="fs-3 fw-bold mb-3">Tarifas por Hora y Día</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-hover align-middle">
+                <h2 class="fs-4 fw-bold mb-3">Tarifas por Hora y Día</h2>
+                <div class="table-responsive mb-4 shadow-sm rounded-3 border bg-white">
+                    <table class="table table-striped table-hover align-middle mb-0">
                         <thead class="table-dark">
                             <tr>
-                                <th>Modelo</th>
-                                <th>Por Hora</th>
-                                <th>Día Completo (8h)</th>
+                                    <th>Modelo</th>
+                                        <th>Por Hora</th>
+                                            <th>Día Completo (8h)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -99,20 +93,18 @@
                 </div>
             </section>
 
-            <!-- Columna Secundaria: Información Complementaria y Botón de Reserva -->
             <aside class="col-12 col-lg-4">
-                <div class="p-4 bg-white rounded-3 border shadow-sm">
-                    <h3 class="fs-4 fw-bold text-success mb-3">¿Qué incluye tu alquiler?</h3>
-                    <ul class="list-unstyled d-flex flex-column gap-2 text-secondary mb-4">
-                        <li>✔️ Casco de seguridad certificado</li>
-                        <li>✔️ Candado de guaya </li>
-                        <li>✔️ Mapa de la red de ciclorrutas</li>
-                        <li>✔️ Asistencia mecánica básica</li>
+                <div class="p-4 bg-white rounded-4 border shadow-sm">
+                    <h3 class="fs-5 fw-bold text-success mb-3">¿Qué incluye tu alquiler?</h3>
+                    <ul class="list-unstyled d-flex flex-column gap-2 text-muted small mb-4">
+                        <li> Casco de seguridad certificado</li>
+                        <li>Candado de guaya para alta seguridad</li>
+                        <li>Mapa de la red de ciclorrutas</li>
+                        <li>Asistencia mecánica básica</li>
                     </ul>
-                    <div class="p-3 bg-light rounded-2 border mb-4">
+                    <div class="p-3 bg-light rounded-3 border mb-4">
                         <p class="small text-muted mb-0"><strong>Nota:</strong> Se requiere presentar documento de identidad original y firmar el contrato de responsabilidad al momento de la entrega.</p>
                     </div>
-                    <!-- Botón añadido que redirige a reservas -->
                     <a href="reservas.html" class="btn btn-success w-100 fw-bold py-2">Reserva Ahora</a>
                 </div>
             </aside>
@@ -120,26 +112,12 @@
         </div>
     </main>
 
-    <a href="https://wa.me/573197158607" class="btn-whatsapp-flotante" target="_blank">Chat WhatsApp</a>
+    <a href="https://wa.me/573197158607" class="btn btn-success position-fixed bottom-0 end-0 m-4 rounded-pill shadow px-3 py-2 fw-semibold" target="_blank" style="z-index: 1000;">Chat WhatsApp</a>
 
-    <footer class="border-top py-4 mt-5">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-4">
-            <div class="footer-bloque">
-                <p class="mb-1"><strong>Rueda Libre Medellín</strong></p>
-                <p class="mb-0">Descubre la ciudad sobre dos ruedas.</p>
-            </div>
-            <div class="footer-bloque">
-                <p class="mb-1"><strong>Contacto</strong></p>
-                <p class="mb-1">Calle 10 # 43A - 25, El Poblado</p>
-                <p class="mb-0">info@ruedalibre.com</p>
-            </div>
-            <div class="footer-bloque">
-                <p class="mb-1"><strong>Horarios</strong></p>
-                <p class="mb-1">Lunes a Domingo</p>
-                <p class="mb-0">6:00 AM - 8:00 PM</p>
-            </div>
-        </div>
+    <footer class="border-top py-4 mt-5 bg-white">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-4 text-muted small"> 
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
